@@ -6,11 +6,6 @@ variable "ENV" {
   type        = string
 }
 
-variable "env" {
-  description = "Environment Name in small case"
-  type        = string
-}
-
 variable "COSTCENTER" {
   description = "Cost Center Name"
   type        = string
@@ -31,7 +26,3 @@ variable "PROJECT" {
   type        = string
 }
 
-variable "project" {
-  description = "Project Name in small case"
-  type        = string
-}

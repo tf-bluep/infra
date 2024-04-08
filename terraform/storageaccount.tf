@@ -1,6 +1,6 @@
-module "bluepi_storage" {
-  source  = "app.terraform.io/rohityad/azure_resourcegroup/azurerm"
-  version = "1.0.7"
+ module "bluepi_storage" {
+  source  = "app.terraform.io/rohityad/azure_storage/azurerm"
+  version = "1.0.0"
 
   account_kind                    = "StorageV2"
   account_replication_type        = "LRS"

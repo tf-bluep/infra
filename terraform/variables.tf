@@ -6,6 +6,11 @@ variable "ENV" {
   type        = string
 }
 
+variable "env" {
+  description = "Environment Name"
+  type        = string
+}
+
 variable "COSTCENTER" {
   description = "Cost Center Name"
   type        = string
@@ -22,6 +27,11 @@ variable "OWNER" {
 }
 
 variable "PROJECT" {
+  description = "Project Name"
+  type        = string
+}
+
+variable "project" {
   description = "Project Name"
   type        = string
 }

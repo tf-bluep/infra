@@ -11,4 +11,5 @@ module "azure_actiongroup" {
   owner                = var.OWNER
   email_address        = "rohit.yadav@bluepi.in"
   short_name           = "exactiongrp"
+  
 }

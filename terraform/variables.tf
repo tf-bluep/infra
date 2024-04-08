@@ -56,3 +56,13 @@ variable "PREFIX" {
   description = "Prefix for QA VMs"
   type        = string
 }
+
+variable "os_password" {
+  type      = string
+  sensitive = true
+}
+
+variable "domainpass" {
+  type      = string
+  sensitive = true
+}

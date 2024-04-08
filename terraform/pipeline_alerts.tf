@@ -15,7 +15,7 @@ resource "azurerm_monitor_metric_alert" "pipeline_failure_alert" {
   }
 
   action {
-    action_group_id = azurerm_monitor_action_group.this.id
+    action_group_id = action_group_id
   }
 }
 

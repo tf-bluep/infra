@@ -3,5 +3,5 @@ output "primary_dfs_host" {
 }
 
 output "action_group_id" {
-  value = azurerm_monitor_action_group.example.id
+  value = azurerm_monitor_action_group.this.id
 }

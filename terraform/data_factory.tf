@@ -23,3 +23,9 @@ module "bluepi_data_factory" {
   integration_runtime_custom_name = "WebAnalytics-${var.PREFIX}SHIR-01"
 
 }
+resource "azurerm_data_factory_integration_runtime_self_hosted" "Navitaire" {
+
+  data_factory_id = module.bluepi_data_factory.data_factory_id
+  name            = "Navitaire-${var.PREFIX}SHIR-01"
+  description     = "Navitaire Self Hosted Runtime"
+}

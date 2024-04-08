@@ -3,7 +3,7 @@ data "azurerm_storage_account" "storage" {
   resource_group_name      = module.bluepi.rg_name
 }
 
-resource "azurerm_monitor_action_group" "ActionGroupDemo" {
+resource "azurerm_monitor_action_group" "this" {
   name                = "ActionGroupDemo-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   resource_group_name = module.bluepi.rg_name
   short_name          = "exactiongrp"
@@ -27,7 +27,7 @@ resource "azurerm_monitor_metric_alert" "storage_account_alert" {
   }
 
   action {
-    action_group_id = azurerm_monitor_action_group.ActionGroupDemo.id
+    action_group_id = azurerm_monitor_action_group.this.id
   }
 
   description = "Alert triggered when Used capacity exceeds 1%"

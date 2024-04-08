@@ -1,6 +1,6 @@
 module "azure_vm_navi_ir1" {
   source  = "app.terraform.io/rohityad/azure_virtualmachine/azurerm"
-  version = "1.0.33"
+  version = "1.0.34"
 
   OS           = "2022"
   application  = "EDHP-${var.ENV}"

@@ -18,7 +18,7 @@ resource "azurerm_monitor_metric_alert" "pipeline_failure_alert" {
   }
 
   action {
-    action_group_id = module.storage_alerts.action_group_id
+    action_group_id = module.azure_actiongroup.id
   }
 }
 

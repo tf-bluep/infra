@@ -1,6 +1,6 @@
 module "azure_actiongroup" {
   source  = "app.terraform.io/rohityad/azure_actiongroup/azurerm"
-  version = "1.0.0"
+  version = "1.0.1"
   
   action_group_name    = "ActionGroupDemo-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   resource_group_name  = module.bluepi.rg_name

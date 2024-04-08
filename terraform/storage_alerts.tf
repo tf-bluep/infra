@@ -17,7 +17,7 @@ resource "azurerm_monitor_metric_alert" "storage_account_alert" {
   }
 
   action {
-    action_group_id = module.azure_actiongroup.id
+    action_group_id = module.azure_actiongroup.action_group_id
   }
 
   description = "Alert triggered when Used capacity exceeds 1%"

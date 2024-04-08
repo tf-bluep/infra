@@ -3,7 +3,7 @@ module "azure_actiongroup" {
   version = "1.0.1"
   
   action_group_name    = "ActionGroupDemo-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
-  resource_group_name  = module.bluepi.rg_name
+  rgname               = module.bluepi.rg_name
   application          = "${var.PROJECT}-${var.ENV}"
   costcenter           = var.COSTCENTER
   department           = var.DEPARTMENT

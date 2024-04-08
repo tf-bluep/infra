@@ -19,7 +19,7 @@ module "bluepi_data_factory" {
     repository_name = "tf-infra"
     root_folder     = "/"
   }
-  integration_runtime_type        = "Azure"
-  integration_runtime_custom_name = "WebAnalytics-${var.PREFIX}SHIR-01"
+  #integration_runtime_type        = "Azure"
+  #integration_runtime_custom_name = "WebAnalytics-${var.PREFIX}SHIR-01"
 
 }

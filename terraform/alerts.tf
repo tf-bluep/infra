@@ -1,6 +1,6 @@
 data "azurerm_storage_account" "storage" {
   name                     = module.bluepi_storage.storage_name
-  resource_group_name      = module.bluepi_storage.resource_group_name
+  resource_group_name      = module.bluepi_storage.rg_name
 }
 
 resource "azurerm_monitor_action_group" "ActionGroupDemo" {
@@ -15,7 +15,7 @@ resource "azurerm_monitor_action_group" "ActionGroupDemo" {
 
 resource "azurerm_monitor_metric_alert" "storage_account_alert" {
   name                = "storage-account-capacity-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
-  resource_group_name = [module.bluepi_storage.resource_group_name]
+  resource_group_name = [module.bluepi_storage.rg_name]
   scopes              = [module.bluepi_storage.storage_name]
 
   criteria {

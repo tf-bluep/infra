@@ -1,5 +1,5 @@
 module "azure_containers" {
-  source  = ""app.terraform.io/rohityad/azure_containers/azurerm""
+  source  = "app.terraform.io/rohityad/azure_containers/azurerm"
   version = "1.0.0"
 
   container_names      = ["edh-data-${var.env}"]

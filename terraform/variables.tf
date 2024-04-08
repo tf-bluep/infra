@@ -36,3 +36,18 @@ variable "project" {
   type        = string
 }
 
+variable "NETWORK_CIDR" {
+  description = "The CIDR block for the network"
+  type        = string
+}
+
+variable "APP_SUBNET_CIDR" {
+  description = "The CIDR block for the application subnet"
+  type        = string
+
+}
+
+variable "PRIVATE_ENDPOINT_SUBNET_CIDR" {
+  description = "The CIDR block for the private endpoint subnet"
+  type        = string
+}

@@ -11,8 +11,8 @@
   env                             = var.ENV
   location                        = data.azurerm_location.current.display_name
   owner                           = var.OWNER
-  rgname                          = module.prism.rg_name
-  storage_account_name            = "sa${var.project}df${var.env}"
+  rgname                          = module.bluepi.rg_name
+  storage_account_name            = "sa-${var.project}df${var.env}"
   enable_hns                      = true
   public_network_access_enabled   = true
   allow_nested_items_to_be_public = true

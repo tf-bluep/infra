@@ -1,6 +1,7 @@
 data "azurerm_storage_account" "storage" {
   name                     = module.bluepi_storage.storage_name
   resource_group_name      = module.bluepi.rg_name
+  data_factory_name        = module.prism_data_factory.data_factory_id
 }
 
 resource "azurerm_monitor_action_group" "ActionGroupDemo" {
@@ -36,7 +37,7 @@ resource "azurerm_monitor_metric_alert" "storage_account_alert" {
 resource "azurerm_monitor_metric_alert" "pipeline_failure_alert" {
   name                 = "pipeline_failure_alert-${var.project}-${var.env}"
   resource_group_name  = module.bluepi.rg_name
-  scopes               = module.prism_data_factory.data_factory_id
+  scopes               = [azurerm_data_factory.this.id]
   evaluation_frequency = "Minute"
   frequency            = 2 
   severity             = "5" 
@@ -51,3 +52,4 @@ resource "azurerm_monitor_metric_alert" "pipeline_failure_alert" {
   action {
     action_group_id = azurerm_monitor_action_group.ActionGroupDemo.id
   }
+}

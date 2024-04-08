@@ -1,6 +1,6 @@
 module "azure_networking" {
   source  = "app.terraform.io/rohityad/azure_networking/azurerm"
-  version = "1.0.31"
+  version = "1.0.32"
 
   vnet_name          = "VNET-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   vnet_address_space = [var.NETWORK_CIDR]

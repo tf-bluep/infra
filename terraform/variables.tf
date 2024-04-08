@@ -51,3 +51,8 @@ variable "PRIVATE_ENDPOINT_SUBNET_CIDR" {
   description = "The CIDR block for the private endpoint subnet"
   type        = string
 }
+
+variable "PREFIX" {
+  description = "Prefix for QA VMs"
+  type        = string
+}

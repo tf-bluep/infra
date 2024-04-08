@@ -1,3 +1,8 @@
+data "azurerm_storage_account" "storage" {
+  name                     = module.bluepi_storage.storage_name
+  resource_group_name      = module.bluepi_storage.resource_group_name
+}
+
 resource "azurerm_monitor_action_group" "ActionGroupDemo" {
   name                = "ActionGroupDemo-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   resource_group_name = module.bluepi.rg_name

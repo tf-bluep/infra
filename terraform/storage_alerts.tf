@@ -45,7 +45,7 @@ resource "azurerm_monitor_metric_alert" "blob_storage_Availability_alert" {
   window_size       = "PT1H"
 }
 
-resource "azurerm_monitor_metric_alert" "blob_storage_Transactions_alert" {
+resource "azurerm_monitor_metric_alert" "blob_storage_transactions_alert" {
   name                = "blob-storage-account-transactions-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   resource_group_name = module.bluepi.rg_name
   scopes              = [data.azurerm_storage_account.storage.id]

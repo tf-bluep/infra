@@ -9,11 +9,11 @@ resource "azurerm_monitor_metric_alert" "storage_account_alert" {
   scopes              = [data.azurerm_storage_account.storage.id]
 
   criteria {
-    metric_namespace = "Microsoft.Storage/storageAccounts"
-    metric_name      = "UsedCapacity"
+    metric_namespace = "Microsoft.Storage/storageAccounts/blobservices"
+    metric_name      = "BlobCapacity"
     aggregation      = "Average"
     operator         = "GreaterThan"
-    threshold        = 1
+    threshold        = 90
   }
 
   action {

@@ -13,7 +13,7 @@ resource "azurerm_monitor_metric_alert" "pipeline_failure_alert" {
 
   criteria {
     metric_namespace = "Microsoft.DataFactory/factories"
-    metric_name      = "Failed pipeline runs metrics"
+    metric_name      = "FailedPipelineRunsMetrics"
     aggregation      = "Total"
     operator         = "GreaterThan"
     threshold        = 0

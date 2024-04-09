@@ -13,9 +13,9 @@
   owner                           = var.OWNER
   rgname                          = module.bluepi.rg_name
   storage_account_name            = "sa${var.project}df${var.env}"
-  hns_enabled                   = true
-  public_network_access_enabled = true
-  allow_nested_items_to_be_public = true
+  hns_enabled                     = true
+  public_network_access_enabled   = true
+  
   
   storage_blob_data_protection = {
     versioning_enabled = false

@@ -9,7 +9,7 @@ resource "azurerm_monitor_metric_alert" "blob_storage_account_alert" {
   scopes              = [data.azurerm_storage_account.storage.id]
 
   criteria {
-    metric_namespace = "microsoft.storage/storageaccounts/blobservices"
+    metric_namespace = "Microsoft.Storage/storageAccounts"
     metric_name      = "Egress"
     aggregation      = "Average"
     operator         = "GreaterThan"

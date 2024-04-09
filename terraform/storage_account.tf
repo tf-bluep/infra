@@ -13,8 +13,10 @@
   owner                           = var.OWNER
   rgname                          = module.bluepi.rg_name
   storage_account_name            = "sa${var.project}df${var.env}"
-  hns_enabled                     = true
+   enable_hns                      = true
   public_network_access_enabled   = true
+  allow_nested_items_to_be_public = true
+
   
 
 }

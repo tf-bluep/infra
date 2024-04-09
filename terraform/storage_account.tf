@@ -1,6 +1,6 @@
  module "bluepi_storage" {
   source  = "app.terraform.io/rohityad/azure_storage/azurerm"
-  version = "1.0.7"
+  version = "1.0.8"
 
   account_kind                    = "StorageV2"
   account_replication_type        = "LRS"
@@ -16,4 +16,9 @@
   enable_hns                      = true
   public_network_access_enabled   = true
   allow_nested_items_to_be_public = true
+  
+  storage_blob_data_protection = {
+    versioning_enabled = false
+  }
+
 }

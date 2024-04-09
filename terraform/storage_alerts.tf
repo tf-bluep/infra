@@ -53,7 +53,7 @@ resource "azurerm_monitor_metric_alert" "blob_storage_transactions_alert" {
   criteria {
     metric_namespace = "Microsoft.Storage/storageAccounts"
     metric_name      = "Transactions"
-    aggregation      = "Average"
+    aggregation      = "Sum"
     operator         = "GreaterThan"
     threshold        = 90
   }

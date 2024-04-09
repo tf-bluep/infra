@@ -4,7 +4,7 @@ data "azurerm_storage_account" "storage" {
 }
 
 resource "azurerm_monitor_metric_alert" "blob_storage_egress_alert" {
-  name                = "blob-storage-account-capacity-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
+  name                = "blob-storage-account-egress-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   resource_group_name = module.bluepi.rg_name
   scopes              = [data.azurerm_storage_account.storage.id]
 
@@ -25,7 +25,7 @@ resource "azurerm_monitor_metric_alert" "blob_storage_egress_alert" {
 }
 
 resource "azurerm_monitor_metric_alert" "blob_storage_Availability_alert" {
-  name                = "blob-storage-account-capacity-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
+  name                = "blob-storage-account-Availability-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   resource_group_name = module.bluepi.rg_name
   scopes              = [data.azurerm_storage_account.storage.id]
 
@@ -45,8 +45,8 @@ resource "azurerm_monitor_metric_alert" "blob_storage_Availability_alert" {
   window_size       = "PT1H"
 }
 
-resource "azurerm_monitor_metric_alert" "blob_storage_account_alert" {
-  name                = "blob-storage-account-capacity-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
+resource "azurerm_monitor_metric_alert" "blob_storage_Transactions_alert" {
+  name                = "blob-storage-account-transactions-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   resource_group_name = module.bluepi.rg_name
   scopes              = [data.azurerm_storage_account.storage.id]
 

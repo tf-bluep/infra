@@ -1,5 +1,5 @@
 data "azurerm_storage_account" "storage" {
-  name                     = module.bluepi_storage.storage_name
+  #name                     = module.bluepi_storage.storage_name
   resource_group_name      = module.bluepi.rg_name
 }
 

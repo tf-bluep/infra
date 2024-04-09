@@ -3,7 +3,7 @@ data "azurerm_storage_account" "storage" {
   resource_group_name      = module.bluepi.rg_name
 }
 
-resource "azurerm_monitor_metric_alert" "storage_account_alert" {
+resource "azurerm_monitor_metric_alert" "blob_storage_account_alert" {
   name                = "blob-storage-account-capacity-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   resource_group_name = module.bluepi.rg_name
   scopes              = [data.azurerm_storage_account.storage.id]

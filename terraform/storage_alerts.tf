@@ -4,12 +4,12 @@ data "azurerm_storage_account" "storage" {
 }
 
 resource "azurerm_monitor_metric_alert" "storage_account_alert" {
-  name                = "storage-account-capacity-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
+  name                = "blob-storage-account-capacity-alert-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   resource_group_name = module.bluepi.rg_name
   scopes              = [data.azurerm_storage_account.storage.id]
 
   criteria {
-    metric_namespace = "Microsoft.storage/storageaccounts/blobservices"
+    metric_namespace = "Microsoft.storage/storageaccounts"
     metric_name      = "BlobCapacity"
     aggregation      = "Average"
     operator         = "GreaterThan"

@@ -16,9 +16,5 @@
   hns_enabled                     = true
   public_network_access_enabled   = true
   
-  
-  storage_blob_data_protection = {
-    versioning_enabled = false
-  }
 
 }

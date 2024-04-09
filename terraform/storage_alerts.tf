@@ -10,10 +10,10 @@ resource "azurerm_monitor_metric_alert" "storage_account_alert" {
 
   criteria {
     metric_namespace = "microsoft.storage/storageaccounts/blobservices"
-    metric_name      = "BlobCapacity"
+    metric_name      = "Egress"
     aggregation      = "Average"
     operator         = "GreaterThan"
-    threshold        = 90
+    threshold        = 500
   }
 
   action {

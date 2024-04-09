@@ -7,7 +7,7 @@ resource "azurerm_monitor_metric_alert" "pipeline_failure_alert" {
   name                 = "pipeline_failure_alert-${var.project}-${var.env}"
   resource_group_name  = module.bluepi.rg_name
   scopes               = [data.azurerm_data_factory.pipeline.id]
-  frequency            = "PT24H" 
+  frequency            = "PT1H" 
   severity             = "3" 
 
   criteria {
@@ -26,7 +26,7 @@ resource "azurerm_monitor_metric_alert" "pipeline_cancelled_alert" {
   name                = "PipelineCancelledAlert-${var.project}-${var.env}"
   resource_group_name = module.bluepi.rg_name
   scopes              = [data.azurerm_data_factory.pipeline.id]
-  frequency           = "PT24H" 
+  frequency           = "PT1H" 
   severity            = "3"
 
   criteria {
@@ -46,7 +46,7 @@ resource "azurerm_monitor_metric_alert" "trigger_failure_alert" {
   name                = "TriggerFailureAlert-${var.project}-${var.env}"
   resource_group_name = module.bluepi.rg_name
   scopes              = [data.azurerm_data_factory.pipeline.id]
-  frequency           = "PT24H" 
+  frequency           = "PT1H" 
   severity            = "3"
 
   criteria {

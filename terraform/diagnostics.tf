@@ -9,6 +9,6 @@ module "azure_diagnostics" {
   "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/my-resource-group/providers/Microsoft.OperationalInsights/workspaces/my-log-analytics-workspace",
   "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/my-resource-group/providers/Microsoft.EventHub/namespaces/my-event-hub-namespace"
 ]
-  resource_id           =["/subscriptions/f2fb6ada-1520-4d1a-a23b-8ebbcf63a24c/resourceGroups/RG-it-bluepi-dev/providers/Microsoft.Storage/storageAccounts/sabluepidfdev"]
+  resource_id           ="/subscriptions/f2fb6ada-1520-4d1a-a23b-8ebbcf63a24c/resourceGroups/RG-it-bluepi-dev/providers/Microsoft.Storage/storageAccounts/sabluepidfdev"
 
 }

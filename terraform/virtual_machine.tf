@@ -2,7 +2,7 @@ module "azure_vm_navi_ir1" {
   source  = "app.terraform.io/rohityad/azure_virtualmachine/azurerm"
   version = "1.0.36"
 
-  OS           = "2022"
+  #OS           = "2022"
   application  = "EDHP-${var.ENV}"
   costcenter   = var.COSTCENTER
   datadisksize = "32"

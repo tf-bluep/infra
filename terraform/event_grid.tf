@@ -18,14 +18,14 @@ resource "azurerm_storage_queue" "this" {
 }
 
 
-resource "azurerm_eventgrid_event_subscription" "this" {
-  name                   = "subscription-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
-  scope                  = module.bluepi_storage.storage_account_id
-  event_delivery_schema  = "EventGridSchema"
-  included_event_types    = ["BlobCreated"]
+#resource "azurerm_eventgrid_event_subscription" "this" {
+ # name                   = "subscription-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
+ # scope                  = module.bluepi_storage.storage_account_id
+ # event_delivery_schema  = "EventGridSchema"
+ # included_event_types    = ["BlobCreated"]
   
-  storage_queue_endpoint {
-    storage_account_id = module.bluepi_storage.storage_account_id
-    queue_name         = azurerm_storage_queue.this.name
-  }
-}
+ # storage_queue_endpoint {
+  #  storage_account_id = module.bluepi_storage.storage_account_id
+  #  queue_name         = azurerm_storage_queue.this.name
+ # }
+#}

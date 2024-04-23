@@ -11,6 +11,12 @@ resource "azurerm_eventgrid_topic" "this" {
   }
 }
 
+resource "azurerm_storage_queue" "this" {
+  name                  = "saqueue${var.project}df${var.env}"
+  storage_account_name  = module.bluepi.rg_name
+ 
+}
+
 #resource "azurerm_eventgrid_event_subscription" "example" {
  # name                   = "subscription-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
  # scope                  = azurerm_eventgrid_topic.this.id

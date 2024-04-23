@@ -13,7 +13,7 @@ resource "azurerm_eventgrid_topic" "this" {
 
 resource "azurerm_storage_queue" "this" {
   name                  = "saqueue${var.project}df${var.env}"
-  storage_account_name  = module.bluepi.rg_name
+  storage_account_name  = module.bluepi_storage.storage_name
  
 }
 

@@ -17,3 +17,11 @@
   public_network_access_enabled   = true
   allow_nested_items_to_be_public = true
 }
+
+resource "azurerm_storage_queue" "this" {
+  name                  = sa_queue${var.project}df${var.env}
+  storage_account_name  = module.bluepi.rg_name
+  #queue_service_metadata = {
+  #  "metadata-key" = "metadata-value"
+  #}
+}

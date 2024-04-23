@@ -22,7 +22,7 @@ resource "azurerm_eventgrid_event_subscription" "this" {
   scope = module.bluepi.rg_name
   
   storage_queue_endpoint {
-    storage_account_id = module.bluepi_storage.storage_name
+    storage_account_id = module.bluepi_storage.storage_id
     queue_name         = azurerm_storage_queue.this.name
   }
 }

@@ -13,7 +13,7 @@ resource "azurerm_monitor_metric_alert" "blob_storage_egress_alert" {
     metric_name      = "Egress"
     aggregation      = "Average"
     operator         = "GreaterThan"
-    threshold        = 500
+    threshold        = 500*1024*1024*1024
   }
 
   action {

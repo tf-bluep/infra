@@ -19,7 +19,7 @@
 }
 
 resource "azurerm_storage_queue" "this" {
-  name                  = "sa_queue_${var.project}df${var.env}"
+  name                  = "sa_queue"
   storage_account_name  = module.bluepi.rg_name
  
 }

@@ -17,11 +17,12 @@ resource "azurerm_storage_queue" "this" {
  
 }
 
-#resource "azurerm_eventgrid_event_subscription" "example" {
- # name                   = "subscription-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
- # scope                  = azurerm_eventgrid_topic.this.id
- # event_delivery_schema  = "EventGridSchema"
- # endpoint_type          = "WebHook"
- # endpoint_url           = "https://your-webhook-url"
- # included_event_types   = ["All"]
-#}
+resource "azurerm_eventgrid_event_subscription" "this" {
+  name  = "subscription-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
+  scope = module.bluepi.rg_name
+  
+  storage_queue_endpoint {
+    storage_account_id = module.bluepi_storage.storage_name
+    queue_name         = azurerm_storage_queue.this.name
+  }
+}

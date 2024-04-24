@@ -18,9 +18,11 @@ resource "azurerm_storage_queue" "this" {
 }
 
 
-resource "azurerm_eventgrid_event_subscription" "this" {
+resource "azurerm_eventgrid_system_topic_event_subscription" "this" {
   name                   = "subscription-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
-  scope                  = module.bluepi_storage.storage_account_id
+  #scope                  = module.bluepi_storage.storage_account_id
+  system_topic            = azurerm_eventgrid_topic.this.name
+  resource_group_name     = module.bluepi.rg_name
   event_delivery_schema  = "EventGridSchema"
   included_event_types    = ["BlobCreated"]
   

@@ -1,6 +1,6 @@
 module "bluepi" {
   source  = "app.terraform.io/rohityad/azure_resourcegroup/azurerm"
-  version = "1.0.0"
+  version = "1.0.33"
 
 
   application = "${var.PROJECT}-${var.ENV}"

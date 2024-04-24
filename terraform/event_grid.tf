@@ -23,7 +23,7 @@ resource "azurerm_eventgrid_system_topic" "this" {
   name                   = "topic-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
   location               = "Global"
   resource_group_name    = module.bluepi.rg_name
-  source_arm_resource_id = module.bluepi.rg_name_id
+  source_arm_resource_id = module.bluepi.rg_id
   topic_type             = "Microsoft.Resources.ResourceGroups"
 }
 
